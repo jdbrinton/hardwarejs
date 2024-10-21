@@ -2,6 +2,8 @@
 
 HardwareJS is a free high-performance javascript hardware emulator in the browser for the wasm-linux project, both provided by Open Source Propulsion Works, a US non-profit organization. Using multiple web APIs it provides hardware emulation and compute and memory resources for a custom wasm-native linux virtual machine.
 
+- Linux 6.2.1 kernel ported to WebAssembly + HardwareJS (wasm32-hardwarejs) (https://github.com/jdbrinton/linux-wasm) (in development)
+
 ## favicon
 
 This favicon was generated using the following font:
