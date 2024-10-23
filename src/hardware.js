@@ -1,7 +1,9 @@
+import Worker from './wasmWorker.worker.js';
+
 export class HardwareEmulator {
   constructor(terminal) {
     this.terminal = terminal;
-    this.worker = new Worker('wasmWorker.js');
+    this.worker = new Worker();
 
     this.worker.onmessage = (event) => {
       const data = event.data;

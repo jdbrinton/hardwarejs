@@ -556,6 +556,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/wasmWorker.worker.js":
+/*!**********************************!*\
+  !*** ./src/wasmWorker.worker.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Worker_fn)\n/* harmony export */ });\nfunction Worker_fn() {\n  return new Worker(__webpack_require__.p + \"wasmWorker.worker.b947f6ba2e8a057d4246.worker.js\");\n}\n\n\n//# sourceURL=webpack://hardwarejs/./src/wasmWorker.worker.js?");
+
+/***/ }),
+
 /***/ "./src/hardware.js":
 /*!*************************!*\
   !*** ./src/hardware.js ***!
@@ -563,7 +574,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   HardwareEmulator: () => (/* binding */ HardwareEmulator)\n/* harmony export */ });\nclass HardwareEmulator {\r\n  constructor(terminal) {\r\n    this.terminal = terminal;\r\n    this.worker = new Worker('wasmWorker.js');\r\n\r\n    this.worker.onmessage = (event) => {\r\n      const data = event.data;\r\n      if (data.type === 'console_output') {\r\n        this.terminal.write(data.message);\r\n      } else if (data.type === 'error') {\r\n        console.error('Error from worker:', data.error);\r\n      }\r\n    };\r\n\r\n    this.worker.postMessage({ type: 'start' });\r\n  }\r\n\r\n  sendInputToWasm(data) {\r\n    for (let i = 0; i < data.length; i++) {\r\n      const char = data[i];\r\n      const chCode = char.charCodeAt(0);\r\n      this.worker.postMessage({ type: 'input', chCode });\r\n    }\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack://hardwarejs/./src/hardware.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   HardwareEmulator: () => (/* binding */ HardwareEmulator)\n/* harmony export */ });\n/* harmony import */ var _wasmWorker_worker_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wasmWorker.worker.js */ \"./src/wasmWorker.worker.js\");\n\r\n\r\nclass HardwareEmulator {\r\n  constructor(terminal) {\r\n    this.terminal = terminal;\r\n    this.worker = new _wasmWorker_worker_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\r\n\r\n    this.worker.onmessage = (event) => {\r\n      const data = event.data;\r\n      if (data.type === 'console_output') {\r\n        this.terminal.write(data.message);\r\n      } else if (data.type === 'error') {\r\n        console.error('Error from worker:', data.error);\r\n      }\r\n    };\r\n\r\n    this.worker.postMessage({ type: 'start' });\r\n  }\r\n\r\n  sendInputToWasm(data) {\r\n    for (let i = 0; i < data.length; i++) {\r\n      const char = data[i];\r\n      const chCode = char.charCodeAt(0);\r\n      this.worker.postMessage({ type: 'input', chCode });\r\n    }\r\n  }\r\n}\n\n//# sourceURL=webpack://hardwarejs/./src/hardware.js?");
 
 /***/ }),
 

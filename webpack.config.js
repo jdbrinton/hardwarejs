@@ -10,6 +10,23 @@ module.exports = {
     clean: true,
     publicPath: '/',
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.worker\.js$/,
+        use: {
+          loader: 'worker-loader',
+          options: {
+            filename: '[name].[contenthash].worker.js'
+          }
+        }
+      }
+    ],
+  },
   devServer: {
     static: './src',
     port: 9000,
@@ -26,13 +43,5 @@ module.exports = {
       ],
     }),
   ],
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
-  },
   mode: 'development',
 };
