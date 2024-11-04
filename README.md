@@ -1,10 +1,10 @@
 # NOTICE
 
-THIS PROJECT IS NOWHERE NEAR COMPLETE. ITS LIKELY WONT BE COMPLETE FOR A VERY LONG TIME. AT THE MOMENT THERES LIKELY NOTHING USEFUL HERE. THESE ARE NOT THE REPOSITORIES YOU ARE LOOKING FOR!
+THIS PROJECT IS NOWHERE NEAR COMPLETE. ITS LIKELY WONT BE COMPLETE FOR A WHILE. AT THE MOMENT THERES LIKELY NOTHING USEFUL HERE. THESE ARE NOT THE REPOSITORIES YOU ARE LOOKING FOR!
 
 # HardwareJs
 
-HardwareJS is a free high-performance javascript hardware emulator in the browser for the wasm-linux project, both provided by Open Source Propulsion Works, a US non-profit organization. Using multiple web APIs it provides hardware emulation and compute and memory resources for a custom wasm-native linux virtual machine.
+HardwareJS is a free high-performance javascript hardware emulator in the browser for the wasm-linux project. Using multiple web APIs it provides hardware emulation and compute and memory resources for a custom wasm-native linux virtual machine.
 
 ## Usage
 
